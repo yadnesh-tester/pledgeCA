@@ -12,6 +12,9 @@
   <meta property="og:title" content="PledgeCA Assured Policy - Refund Guarantee">
   <meta property="og:description" content="PledgeCA Assured Policy: 100% Money-Back Guarantee if you clear all PledgeCA Tests but do not pass the exam.">
   <meta property="og:image" content="https://pledgeca.com/images/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PledgeCA Assured Policy - Refund Guarantee">
+  <meta name="twitter:description" content="PledgeCA Assured Policy: 100% Money-Back Guarantee if you clear all PledgeCA Tests but do not pass the exam.">
   <link rel="icon" type="image/jpeg" href="images/logo.png">
   <link rel="apple-touch-icon" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,33 +30,20 @@
     .policy-highlight { background: var(--gray-50); border-left: 4px solid var(--gold); padding: 20px 24px; border-radius: var(--radius-sm); margin: 24px 0; }
     .policy-highlight p { margin-bottom: 0; }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pledgeca.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Refund Policy", "item": "https://pledgeca.com/refund-policy.html"}
+  ]
+}
+</script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <nav class="navbar scrolled" id="navbar">
-    <div class="container nav-inner">
-      <a href="index.html"><img src="images/logo.png" alt="PledgeCA" class="logo-img"></a>
-      <ul class="nav-links" id="navLinks">
-        <li class="nav-drawer-header"><button class="nav-drawer-close" aria-label="Close menu">&times;</button></li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="nav-cta"><a href="login.html" class="btn btn-gold">Login</a></li>
-      </ul>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span></button>
-    </div>
-  </nav>
-  <div class="mobile-overlay" id="mobileOverlay"></div>
-
-  <div class="mobile-bottom-bar">
-    <div class="mobile-bottom-bar-inner">
-      <a href="tel:+919764015003" class="btn-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 11.07 11.07 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 11.07 11.07 0 002.81.7A2 2 0 0122 16.92z"/></svg> Call Now</a>
-      <a href="contact.html" class="btn btn-gold">Contact Now</a>
-    </div>
-  </div>
+  <nav id="site-nav"></nav>
 
   <section class="page-hero">
     <div class="container">
@@ -90,6 +80,7 @@
 
   <!-- Footer -->
   <footer id="site-footer"></footer>
+  <script src="nav.js"></script>
   <script src="footer.js"></script>
 
   <script src="script.js"></script>
