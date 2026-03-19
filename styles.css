@@ -114,7 +114,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
 }
-.logo-img { height: 56px; width: auto; }
+.logo-img { height: 70px; width: auto; }
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-links a {
   padding: 8px 16px; font-size: 0.88rem; font-weight: 500; color: var(--gray-600);
@@ -242,6 +242,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 .trust-item:hover { background: rgba(212,175,55,0.1); }
 .trust-item:hover .trust-icon { transform: scale(1.1); box-shadow: 0 8px 32px rgba(212,175,55,0.3); }
+a.trust-link { text-decoration: none; color: inherit; cursor: pointer; }
 .trust-icon {
   width: 52px; height: 52px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
@@ -474,7 +475,8 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 /* ===== FOOTER ===== */
 .footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 72px 0 0; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.footer-brand .logo-img { height: 50px; margin-bottom: 16px; background: var(--white); border-radius: var(--radius-sm); padding: 4px 8px; }
+.footer-logo-text { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: var(--white); text-decoration: none; display: inline-block; margin-bottom: 16px; letter-spacing: -0.02em; }
+.footer-logo-text:hover { color: var(--gold); }
 .footer-brand p { font-size: 0.88rem; line-height: 1.75; margin-bottom: 20px; }
 .social-links { display: flex; gap: 10px; }
 .social-links a {
@@ -729,10 +731,9 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 /* ===== MOBILE NAV DRAWER HEADER ===== */
 li.nav-drawer-header {
-  display: none; padding: 20px 24px; border-bottom: 1px solid var(--gray-200);
-  align-items: center; justify-content: space-between; width: 100%;
+  display: none; padding: 16px 20px; border-bottom: 1px solid var(--gray-200);
+  align-items: center; justify-content: flex-end; width: 100%;
 }
-.nav-drawer-header .drawer-logo { height: 36px; width: auto; }
 .nav-drawer-close {
   width: 40px; height: 40px; border-radius: 8px; background: var(--gray-100);
   display: flex; align-items: center; justify-content: center; border: none;
@@ -793,10 +794,10 @@ li.nav-drawer-header {
   }
   .nav-links.active { right: 0; }
   li.nav-drawer-header { display: flex; }
-  .nav-links li { padding: 0 16px; }
+  .nav-links li { padding: 4px 20px; }
   .nav-links li.nav-drawer-header { padding: 0; }
   .nav-links a {
-    width: 100%; padding: 14px 16px; font-size: 0.95rem;
+    width: 100%; padding: 14px 16px; font-size: 1rem;
     border-radius: var(--radius-sm); display: flex; align-items: center; gap: 10px;
     text-align: left;
   }

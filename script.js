@@ -42,30 +42,6 @@ if (drawerClose) {
   drawerClose.addEventListener('click', closeMenu);
 }
 
-// ===== Collapsible footer sections (mobile) =====
-document.querySelectorAll('.footer-toggle').forEach(toggle => {
-  toggle.addEventListener('click', () => {
-    const parent = toggle.parentElement;
-    if (!parent) return;
-    const isExpanded = parent.classList.contains('expanded');
-
-    document.querySelectorAll('.footer-grid > div:not(.footer-brand)').forEach(div => {
-      div.classList.remove('expanded');
-      const btn = div.querySelector('.footer-toggle');
-      if (btn) {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    if (!isExpanded) {
-      parent.classList.add('expanded');
-      toggle.classList.add('active');
-      toggle.setAttribute('aria-expanded', 'true');
-    }
-  });
-});
-
 // ===== Scroll reveal animations =====
 const revealElements = document.querySelectorAll('.reveal');
 
