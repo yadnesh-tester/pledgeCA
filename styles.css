@@ -379,12 +379,25 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   padding: 32px; background: var(--white); border-radius: var(--radius-lg);
   border: 1px solid var(--gray-200); flex-shrink: 0;
   width: calc(33.333% - 16px); margin: 0 8px; box-sizing: border-box;
-  display: flex; flex-direction: column;
 }
-.testi-card blockquote { flex: 1; }
-.testi-card .testi-author { margin-top: auto; }
 .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 3px; }
-.testi-card blockquote { font-size: 0.9rem; color: var(--text); line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+.testi-card blockquote {
+  font-size: 0.9rem; color: var(--text); line-height: 1.75; margin-bottom: 12px; font-style: italic;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.testi-card.expanded blockquote {
+  -webkit-line-clamp: unset; overflow: visible;
+}
+.testi-read-more {
+  background: none; border: none; color: var(--gold-dark); font-size: 0.82rem;
+  font-weight: 600; cursor: pointer; padding: 0; margin-bottom: 16px;
+  font-family: var(--font); display: none;
+}
+.testi-read-more:hover { color: var(--gold); text-decoration: underline; }
+.testi-card.clamped .testi-read-more { display: inline-block; }
+.testi-card.expanded .testi-read-more span { display: none; }
+.testi-card.expanded .testi-read-more::after { content: 'Show less'; }
 .testi-author { display: flex; align-items: center; gap: 12px; }
 .testi-avatar {
   width: 42px; height: 42px; background: var(--navy); color: var(--gold);
@@ -781,7 +794,7 @@ li.nav-drawer-header {
   .carousel-btn svg { width: 14px; height: 14px; }
   .carousel-track { align-items: flex-start; }
   .testi-card { width: calc(100% - 16px); padding: 20px; }
-  .testi-card blockquote { font-size: 0.85rem; margin-bottom: 16px; flex: none; }
+  .testi-card blockquote { font-size: 0.85rem; margin-bottom: 12px; }
 
   /* Test cards horizontal scroll */
   .test-cards {

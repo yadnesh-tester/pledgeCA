@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA, CS & CMA Exam Preparation Courses – Mentorship & Test Series | PledgeCA</title>
+  <meta name="description" content="Choose your exam path with PledgeCA. Expert mentorship, structured study plans, and test series for CA Foundation, Intermediate & Final, CS, and CMA exams. 30-50% questions match actual exams.">
+  <meta name="keywords" content="CA courses, CA Foundation course, CA Intermediate course, CA Final course, CS course, CMA course, CA exam preparation, CA mentorship program, CA coaching India">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pledgeca.com/courses.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pledgeca.com/courses.html">
+  <meta property="og:title" content="Choose Your CA, CS or CMA Exam Path | PledgeCA">
+  <meta property="og:description" content="Expert mentorship for CA Foundation, Intermediate & Final. 1000+ students mentored. 30-50% exam match rate.">
+  <meta property="og:image" content="https://pledgeca.com/images/logo.jpg">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+  <link rel="apple-touch-icon" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ===== LANDING PAGE SPECIFIC ===== */
+    .lp-nav { background: var(--white); padding: 12px 0; border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 100; }
+    .lp-nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .lp-nav .logo-img { height: 40px; }
+    .lp-nav-right { display: flex; align-items: center; gap: 16px; }
+    .lp-nav-phone { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--navy); }
+    .lp-nav-phone svg { width: 16px; height: 16px; color: var(--gold); }
+
+    /* Hero */
+    .lp-hero { background: var(--navy); padding: 56px 0 48px; text-align: center; position: relative; overflow: hidden; }
+    .lp-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.1) 0%, transparent 60%); }
+    .lp-hero-inner { position: relative; z-index: 1; }
+    .lp-hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25); border-radius: 50px; font-size: 0.78rem; font-weight: 700; color: var(--gold-light); margin-bottom: 20px; }
+    .lp-hero h1 { font-size: 2.6rem; color: var(--white); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .lp-hero h1 .gold { color: var(--gold); }
+    .lp-hero p { font-size: 1.05rem; color: var(--gray-400); max-width: 560px; margin: 0 auto 28px; line-height: 1.7; }
+    .lp-trust-row { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+    .lp-trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+    /* Social Proof */
+    .lp-proof { padding: 40px 0; background: var(--white); border-bottom: 1px solid var(--gray-200); }
+    .lp-proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+    .lp-proof-num { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--navy); display: block; }
+    .lp-proof-item h4 { font-size: 0.85rem; margin-top: 2px; }
+    .lp-proof-item p { font-size: 0.78rem; color: var(--text-light); margin: 0; }
+
+    /* Urgency banner */
+    .lp-urgency { background: linear-gradient(135deg, var(--gold-dark), var(--gold)); padding: 16px 0; text-align: center; }
+    .lp-urgency p { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin: 0; }
+
+    /* ===== COURSE SELECTOR ===== */
+    .lp-courses { padding: 56px 0 64px; background: var(--off-white); min-height: 500px; }
+    .lp-courses-header { text-align: center; margin-bottom: 40px; }
+    .lp-courses-header h2 { font-size: 1.8rem; margin-bottom: 8px; }
+    .lp-courses-header p { font-size: 0.95rem; color: var(--text-light); }
+
+    /* Back button */
+    .lp-back {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 0.88rem; font-weight: 600;
+      color: var(--text-light); cursor: pointer; border: none; background: none;
+      font-family: var(--font); padding: 8px 0; margin-bottom: 24px; transition: var(--transition);
+    }
+    .lp-back:hover { color: var(--navy); }
+    .lp-back svg { width: 18px; height: 18px; }
+
+    /* Step 1: Exam type cards (CA, CS, CMA) */
+    .lp-exam-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+    .lp-exam-card {
+      background: var(--white); border: 2px solid var(--gray-200); border-radius: var(--radius-xl);
+      padding: 48px 32px; text-align: center; cursor: pointer; transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .lp-exam-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-6px); }
+    .lp-exam-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+      background: var(--gold); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: center;
+    }
+    .lp-exam-card:hover::after { transform: scaleX(1); }
+    .lp-exam-icon { font-size: 3rem; margin-bottom: 16px; display: block; }
+    .lp-exam-card h3 { font-size: 1.3rem; margin-bottom: 6px; color: var(--navy); }
+    .lp-exam-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; margin-bottom: 16px; }
+    .lp-exam-card .lp-card-arrow {
+      display: inline-flex; align-items: center; gap: 4px; font-size: 0.85rem; font-weight: 700;
+      color: var(--gold-dark);
+    }
+
+    /* Step 2: Level cards (Foundation, Inter, Final) */
+    .lp-level-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+    .lp-level-card {
+      background: var(--white); border: 2px solid var(--gray-200); border-radius: var(--radius-xl);
+      overflow: hidden; cursor: pointer; transition: var(--transition); position: relative;
+    }
+    .lp-level-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-6px); }
+    .lp-level-card.popular { border-color: var(--gold); }
+    .lp-level-card.popular .lp-popular-tag {
+      display: block; background: var(--gold); color: var(--navy); text-align: center;
+      padding: 5px; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em;
+    }
+    .lp-popular-tag { display: none; }
+    .lp-level-card-inner { padding: 40px 28px; text-align: center; }
+    .lp-level-icon { font-size: 2.5rem; margin-bottom: 12px; display: block; }
+    .lp-level-card h3 { font-size: 1.2rem; margin-bottom: 4px; }
+    .lp-level-card span.lp-level-sub { font-size: 0.82rem; color: var(--text-light); display: block; margin-bottom: 14px; }
+    .lp-level-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.65; margin-bottom: 16px; }
+    .lp-level-card .lp-card-arrow { display: inline-flex; align-items: center; gap: 4px; font-size: 0.85rem; font-weight: 700; color: var(--gold-dark); }
+
+    /* Step 3: Single detail card */
+    .lp-detail-card {
+      max-width: 640px; margin: 0 auto; background: var(--white); border-radius: var(--radius-xl);
+      border: 2px solid var(--gray-200); overflow: hidden;
+    }
+    .lp-detail-header {
+      padding: 32px 28px 24px; background: var(--navy); color: var(--white); text-align: center;
+    }
+    .lp-detail-header .lp-detail-icon { font-size: 2.5rem; margin-bottom: 8px; display: block; }
+    .lp-detail-header h3 { font-size: 1.4rem; color: var(--white); margin-bottom: 4px; }
+    .lp-detail-header span { font-size: 0.85rem; color: var(--gray-400); }
+    .lp-detail-body { padding: 32px 28px; }
+    .lp-detail-body > p { font-size: 0.92rem; color: var(--text-light); line-height: 1.75; margin-bottom: 24px; }
+    .lp-journey-title { font-size: 0.8rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .lp-journey-steps { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .lp-step { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--gray-50); border-radius: var(--radius-sm); }
+    .lp-step-num { width: 28px; height: 28px; min-width: 28px; background: var(--navy); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; }
+    .lp-step-text { font-size: 0.88rem; color: var(--text); line-height: 1.55; }
+    .lp-step-text strong { color: var(--navy); }
+    .lp-features-title { font-size: 0.8rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .lp-card-features { margin-bottom: 28px; }
+    .lp-card-features li { padding: 7px 0; font-size: 0.88rem; color: var(--text); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--gray-100); }
+    .lp-card-features li:last-child { border-bottom: none; }
+    .lp-card-features li::before { content: '✓'; color: var(--teal); font-weight: 700; }
+    .lp-card-cta { display: flex; flex-direction: column; gap: 10px; }
+    .lp-card-cta .btn { width: 100%; justify-content: center; padding: 14px 24px; }
+    .btn-wa { background: #25D366; color: #fff; border-color: #25D366; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-wa:hover { background: #1ebe5d; border-color: #1ebe5d; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
+    .btn-wa svg { width: 18px; height: 18px; }
+
+    /* View transitions */
+    .lp-view { display: none; animation: fadeSlideIn 0.35s ease; }
+    .lp-view.active { display: block; }
+    @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Why section */
+    .lp-why { padding: 48px 0; background: var(--white); }
+    .lp-why h2 { text-align: center; font-size: 1.6rem; margin-bottom: 32px; }
+    .lp-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .lp-why-card { padding: 24px; background: var(--off-white); border-radius: var(--radius); text-align: center; }
+    .lp-why-icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+    .lp-why-card h3 { font-size: 0.95rem; margin-bottom: 4px; }
+    .lp-why-card p { font-size: 0.82rem; color: var(--text-light); line-height: 1.65; margin: 0; }
+
+    /* Bottom CTA */
+    .lp-bottom-cta { background: var(--navy); padding: 56px 0; text-align: center; position: relative; overflow: hidden; }
+    .lp-bottom-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 60%); }
+    .lp-bottom-cta-inner { position: relative; z-index: 1; }
+    .lp-bottom-cta h2 { color: var(--white); font-size: 2rem; margin-bottom: 12px; }
+    .lp-bottom-cta p { color: var(--gray-400); font-size: 1rem; max-width: 480px; margin: 0 auto 28px; }
+    .lp-bottom-cta .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* Minimal footer */
+    .lp-footer { background: var(--navy); padding: 20px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); }
+    .lp-footer p { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin: 0; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .lp-hero { padding: 40px 0 36px; }
+      .lp-hero h1 { font-size: 1.8rem; }
+      .lp-hero p { font-size: 0.92rem; }
+      .lp-trust-row { gap: 14px; }
+      .lp-trust-item { font-size: 0.75rem; }
+      .lp-courses { padding: 40px 0 48px; }
+      .lp-courses-header h2 { font-size: 1.45rem; }
+      .lp-exam-cards { grid-template-columns: 1fr; gap: 14px; max-width: 360px; }
+      .lp-exam-card { padding: 28px 24px; display: flex; align-items: center; gap: 16px; text-align: left; }
+      .lp-exam-icon { font-size: 2rem; margin-bottom: 0; min-width: 48px; }
+      .lp-exam-card h3 { font-size: 1.1rem; margin-bottom: 2px; }
+      .lp-exam-card p { display: none; }
+      .lp-exam-card .lp-card-arrow { font-size: 0.8rem; }
+      .lp-level-cards { grid-template-columns: 1fr; gap: 14px; max-width: 360px; }
+      .lp-level-card-inner { padding: 28px 24px; }
+      .lp-detail-card { margin: 0 auto; }
+      .lp-detail-body { padding: 24px 20px; }
+      .lp-proof-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .lp-proof-num { font-size: 1.6rem; }
+      .lp-why-grid { grid-template-columns: 1fr; gap: 12px; }
+      .lp-bottom-cta { padding: 40px 0; }
+      .lp-bottom-cta h2 { font-size: 1.5rem; }
+      .lp-bottom-cta .cta-actions { flex-direction: column; align-items: center; }
+      .lp-bottom-cta .cta-actions .btn { width: 100%; max-width: 300px; }
+      .lp-nav-phone span { display: none; }
+    }
+    @media (max-width: 480px) {
+      .lp-hero h1 { font-size: 1.55rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minimal Nav -->
+  <nav class="lp-nav">
+    <div class="container lp-nav-inner">
+      <a href="index.html"><img src="images/logo.jpg" alt="PledgeCA" class="logo-img"></a>
+      <div class="lp-nav-right">
+        <a href="tel:+919764015003" class="lp-nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 11.07 11.07 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 11.07 11.07 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>+91 97640 15003</span>
+        </a>
+        <a href="https://wa.me/919764015003?text=Hi%20PledgeCA%2C%20I%20want%20to%20know%20about%20your%20courses." class="btn btn-gold" target="_blank" rel="noopener">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Urgency Banner -->
+  <div class="lp-urgency">
+    <div class="container"><p>Limited Seats Available for Upcoming Batch | Book Your Free 30-Min Counseling Now</p></div>
+  </div>
+
+  <!-- Hero -->
+  <section class="lp-hero">
+    <div class="container lp-hero-inner">
+      <div class="lp-hero-badge">Trusted by 1000+ CA Aspirants Across India</div>
+      <h1>Your Complete <span class="gold">Exam Preparation</span> Starts Here</h1>
+      <p>Expert mentorship, structured study plans, and test series where 30-50% questions match actual exams. Choose your path below.</p>
+      <div class="lp-trust-row">
+        <div class="lp-trust-item"><span>👨‍🏫</span> 1-on-1 Mentorship</div>
+        <div class="lp-trust-item"><span>📋</span> Personalized Roadmap</div>
+        <div class="lp-trust-item"><span>🛡️</span> 100% Refund Guarantee</div>
+        <div class="lp-trust-item"><span>🎯</span> 30-50% Exam Match</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="lp-proof">
+    <div class="container">
+      <div class="lp-proof-grid">
+        <div class="lp-proof-item"><span class="lp-proof-num">1000+</span><h4>Students Mentored</h4><p>Aspiring CAs who trusted us</p></div>
+        <div class="lp-proof-item"><span class="lp-proof-num">50+</span><h4>Expert Mentors</h4><p>Experienced professionals</p></div>
+        <div class="lp-proof-item"><span class="lp-proof-num">95%</span><h4>Satisfaction Rate</h4><p>Students rate us excellent</p></div>
+        <div class="lp-proof-item"><span class="lp-proof-num">30-50%</span><h4>Exam Match</h4><p>Questions in actual exams</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Selector (3-step drill-down) -->
+  <section class="lp-courses" id="courses">
+    <div class="container">
+
+      <!-- STEP 1: Choose Exam Type -->
+      <div class="lp-view active" id="view-exams">
+        <div class="lp-courses-header">
+          <h2>Choose Your Exam Path</h2>
+          <p>Select your exam type to explore preparation programs.</p>
+        </div>
+        <div class="lp-exam-cards">
+          <div class="lp-exam-card" data-exam="ca">
+            <span class="lp-exam-icon">🎓</span>
+            <div>
+              <h3>CA – Chartered Accountant</h3>
+              <p>Foundation, Intermediate & Final level mentorship with ICAI-aligned test series.</p>
+              <span class="lp-card-arrow">Explore Levels &rarr;</span>
+            </div>
+          </div>
+          <div class="lp-exam-card" data-exam="cs">
+            <span class="lp-exam-icon">📜</span>
+            <div>
+              <h3>CS – Company Secretary</h3>
+              <p>Executive & Professional level support for ICSI exams with expert guidance.</p>
+              <span class="lp-card-arrow">Explore Levels &rarr;</span>
+            </div>
+          </div>
+          <div class="lp-exam-card" data-exam="cma">
+            <span class="lp-exam-icon">📊</span>
+            <div>
+              <h3>CMA – Cost & Management</h3>
+              <p>Foundation, Intermediate & Final coaching for ICMAI exams.</p>
+              <span class="lp-card-arrow">Explore Levels &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Choose Level -->
+      <div class="lp-view" id="view-levels">
+        <button class="lp-back" id="back-to-exams"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> All Exams</button>
+        <div class="lp-courses-header">
+          <h2 id="levels-title">Choose Your Level</h2>
+          <p>Select your exam level to see the complete preparation journey.</p>
+        </div>
+        <div class="lp-level-cards" id="levels-container"></div>
+      </div>
+
+      <!-- STEP 3: Single Course Detail -->
+      <div class="lp-view" id="view-detail">
+        <button class="lp-back" id="back-to-levels"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> <span id="back-to-levels-text">Back</span></button>
+        <div class="lp-detail-card" id="detail-container"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why PledgeCA -->
+  <section class="lp-why">
+    <div class="container">
+      <h2>Why Students Choose PledgeCA</h2>
+      <div class="lp-why-grid">
+        <div class="lp-why-card"><span class="lp-why-icon">🎯</span><h3>30-50% Exam Match</h3><p>Our test series questions consistently match actual exam questions.</p></div>
+        <div class="lp-why-card"><span class="lp-why-icon">👨‍🏫</span><h3>Dedicated 1-on-1 Mentor</h3><p>Your personal mentor guides you from day one to exam day.</p></div>
+        <div class="lp-why-card"><span class="lp-why-icon">🛡️</span><h3>100% Refund Guarantee</h3><p>Not satisfied? Get a full refund. We stand behind our promise.</p></div>
+        <div class="lp-why-card"><span class="lp-why-icon">📋</span><h3>Personalized Roadmap</h3><p>Day-by-day study plan tailored to your timeline and weak areas.</p></div>
+        <div class="lp-why-card"><span class="lp-why-icon">✍️</span><h3>Writing Strategies</h3><p>Learn answer structuring and scoring techniques from experts.</p></div>
+        <div class="lp-why-card"><span class="lp-why-icon">📊</span><h3>Performance Analytics</h3><p>Track progress with detailed reports after every test.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="lp-bottom-cta">
+    <div class="container"><div class="lp-bottom-cta-inner">
+      <h2>Start Your Free Counseling Today</h2>
+      <p>Talk to our experts for 30+ minutes — completely free. No commitment, just guidance.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/919764015003?text=Hi%20PledgeCA%2C%20I%20want%20to%20book%20a%20free%20counseling%20session." class="btn btn-gold btn-lg" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a href="tel:+919764015003" class="btn btn-ghost-white btn-lg">Call +91 97640 15003</a>
+      </div>
+    </div></div>
+  </section>
+
+  <footer class="lp-footer"><div class="container"><p>&copy; 2026 PledgeCA. All rights reserved. | Pledging Success</p></div></footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919764015003?text=Hi%20PledgeCA%2C%20I%20want%20to%20know%20about%20your%20courses." class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.13 6.742 3.05 9.38L1.054 31.29l6.124-1.96A15.9 15.9 0 0016.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.335 22.594c-.39 1.1-1.932 2.014-3.168 2.28-.846.18-1.95.324-5.668-1.218-4.76-1.972-7.824-6.8-8.062-7.114-.23-.314-1.904-2.536-1.904-4.836s1.204-3.432 1.632-3.902c.428-.47.934-.588 1.246-.588.312 0 .624.002.896.016.288.014.674-.11 1.054.804.39.938 1.326 3.238 1.442 3.472.116.234.194.508.04.82-.156.312-.234.508-.468.782-.234.274-.492.612-.702.822-.234.234-.478.488-.206.958.274.47 1.216 2.006 2.612 3.25 1.794 1.598 3.306 2.094 3.776 2.328.47.234.742.196 1.016-.118.274-.314 1.17-1.364 1.482-1.834.312-.47.624-.39 1.054-.234.43.156 2.728 1.286 3.198 1.52.47.234.782.352.898.546.116.196.116 1.12-.274 2.218z"/></svg>
+  </a>
+
+  <script>
+    // ===== Course Data =====
+    const courseData = {
+      ca: {
+        title: 'CA – Chartered Accountant',
+        levels: [
+          { id: 'ca-foundation', icon: '🎓', name: 'CA Foundation', sub: 'Entry Level', popular: false,
+            desc: 'Start your CA journey with a strong foundation. Our mentors guide you from scratch through all 4 subjects with a proven study plan.',
+            steps: [
+              ['Free Counseling', 'Understand your current level, strengths, and gaps'],
+              ['Personalized Roadmap', 'Day-by-day study plan tailored to your timeline'],
+              ['Mentor Guidance', 'Weekly 1-on-1 sessions for doubts and strategy'],
+              ['Test Series & Review', 'Mock tests with detailed evaluation and feedback'],
+              ['Exam Ready', 'Final revision, writing strategies, and confidence building']
+            ],
+            features: ['Full-length mock papers', 'Subject-wise practice tests', 'Detailed answer solutions', 'Performance analytics', 'Timed exam simulation']
+          },
+          { id: 'ca-intermediate', icon: '📚', name: 'CA Intermediate', sub: 'Group I & II', popular: true,
+            desc: 'Navigate the toughest CA level with strategic mentorship. Group I and Group II specific plans with subject-wise guidance.',
+            steps: [
+              ['Free Counseling', 'Assess your preparation, identify weak areas'],
+              ['Custom Study Plan', 'Group-wise roadmap with daily targets'],
+              ['1-on-1 Mentorship', 'Regular sessions for doubt solving and strategy'],
+              ['Test Series & Evaluation', 'Chapter-wise and full mock tests with mentor review'],
+              ['Writing Mastery', 'Answer structuring, time management, scoring techniques']
+            ],
+            features: ['Group I & Group II mock tests', 'Chapter-wise practice papers', 'Mentor review of answers', 'Performance tracking & analytics', 'Exam strategy guidance', 'Improvement suggestions']
+          },
+          { id: 'ca-final', icon: '🏆', name: 'CA Final', sub: 'Advanced Level', popular: false,
+            desc: 'The final stretch to becoming a Chartered Accountant. Expert strategies for both groups with focus on scoring and presentation.',
+            steps: [
+              ['Free Counseling', 'Review past attempts, pinpoint improvement areas'],
+              ['Strategic Roadmap', 'Priority-based plan focused on high-yield topics'],
+              ['Expert Mentorship', 'Advanced subject guidance and elective support'],
+              ['Mock Exams & Review', 'Full papers with detailed scoring analysis by mentor'],
+              ['Score Maximization', 'Presentation, time allocation, and exam-day strategy']
+            ],
+            features: ['Complete mock exam papers', 'Elective subject tests', 'Advanced answer structuring', 'One-on-one mentor review', 'Scoring strategy sessions']
+          }
+        ]
+      },
+      cs: {
+        title: 'CS – Company Secretary',
+        levels: [
+          { id: 'cs-executive', icon: '📜', name: 'CS Executive', sub: 'Foundation Level', popular: false,
+            desc: 'Build your Company Secretary foundation with structured mentorship covering legal frameworks, governance, and compliance.',
+            steps: [
+              ['Free Counseling', 'Understand your goals and create a timeline'],
+              ['Personalized Roadmap', 'Subject-wise study plan with daily targets'],
+              ['Mentor Guidance', 'Regular 1-on-1 sessions for concept clarity'],
+              ['Test Series & Review', 'Mock tests aligned with ICSI patterns'],
+              ['Exam Ready', 'Writing strategies and final revision support']
+            ],
+            features: ['Full-length mock papers', 'Subject-wise practice tests', 'Detailed answer solutions', 'Performance analytics']
+          },
+          { id: 'cs-professional', icon: '⚖️', name: 'CS Professional', sub: 'Advanced Level', popular: true,
+            desc: 'Master advanced legal, governance, and compliance subjects with expert mentorship tailored for ICSI Professional exams.',
+            steps: [
+              ['Free Counseling', 'Assess preparation and identify priorities'],
+              ['Strategic Roadmap', 'Priority-based plan for high-yield topics'],
+              ['Expert Mentorship', 'Advanced subject guidance and doubt solving'],
+              ['Mock Exams & Review', 'Full papers with mentor evaluation'],
+              ['Score Maximization', 'Writing strategies and exam-day preparation']
+            ],
+            features: ['Complete mock exam papers', 'Advanced answer structuring', 'One-on-one mentor review', 'Performance tracking', 'Scoring strategy sessions']
+          }
+        ]
+      },
+      cma: {
+        title: 'CMA – Cost & Management',
+        levels: [
+          { id: 'cma-foundation', icon: '📊', name: 'CMA Foundation', sub: 'Entry Level', popular: false,
+            desc: 'Start your Cost & Management Accountant journey with structured guidance covering fundamentals of accounting and management.',
+            steps: [
+              ['Free Counseling', 'Understand your goals and create a timeline'],
+              ['Personalized Roadmap', 'Subject-wise study plan with milestones'],
+              ['Mentor Guidance', 'Regular 1-on-1 sessions for concept clarity'],
+              ['Test Series & Review', 'Practice tests aligned with ICMAI patterns'],
+              ['Exam Ready', 'Revision strategies and exam preparation']
+            ],
+            features: ['Full-length mock papers', 'Subject-wise practice tests', 'Detailed answer solutions', 'Performance analytics']
+          },
+          { id: 'cma-intermediate', icon: '📈', name: 'CMA Intermediate', sub: 'Mid Level', popular: true,
+            desc: 'Deep dive into costing, management accounting, and financial management with expert mentorship for ICMAI Intermediate exams.',
+            steps: [
+              ['Free Counseling', 'Assess preparation level and set priorities'],
+              ['Custom Study Plan', 'Group-wise roadmap with targeted coverage'],
+              ['1-on-1 Mentorship', 'Regular doubt solving and concept building'],
+              ['Test Series & Evaluation', 'Mock tests with detailed mentor feedback'],
+              ['Exam Strategies', 'Writing techniques and time management']
+            ],
+            features: ['Group-wise mock tests', 'Chapter-wise practice papers', 'Mentor review of answers', 'Performance tracking', 'Exam strategy guidance']
+          },
+          { id: 'cma-final', icon: '🏆', name: 'CMA Final', sub: 'Advanced Level', popular: false,
+            desc: 'The final step to becoming a Cost & Management Accountant. Strategic mentorship for advanced subjects with scoring focus.',
+            steps: [
+              ['Free Counseling', 'Review past attempts, pinpoint gaps'],
+              ['Strategic Roadmap', 'High-yield topic focus with daily targets'],
+              ['Expert Mentorship', 'Advanced guidance and doubt resolution'],
+              ['Mock Exams & Review', 'Full papers with scoring analysis'],
+              ['Score Maximization', 'Presentation and exam-day strategies']
+            ],
+            features: ['Complete mock exam papers', 'Advanced answer structuring', 'One-on-one mentor review', 'Performance tracking', 'Scoring strategy sessions']
+          }
+        ]
+      }
+    };
+
+    // ===== State =====
+    let currentExam = null;
+    const section = document.getElementById('courses');
+
+    function showView(id) {
+      document.querySelectorAll('.lp-view').forEach(v => v.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Step 1 → Step 2
+    document.querySelectorAll('.lp-exam-card').forEach(card => {
+      card.addEventListener('click', () => {
+        currentExam = card.dataset.exam;
+        const exam = courseData[currentExam];
+        document.getElementById('levels-title').textContent = exam.title;
+        const container = document.getElementById('levels-container');
+        container.innerHTML = exam.levels.map(level => `
+          <div class="lp-level-card ${level.popular ? 'popular' : ''}" data-level="${level.id}">
+            <div class="lp-popular-tag">MOST POPULAR</div>
+            <div class="lp-level-card-inner">
+              <span class="lp-level-icon">${level.icon}</span>
+              <h3>${level.name}</h3>
+              <span class="lp-level-sub">${level.sub}</span>
+              <p>${level.desc}</p>
+              <span class="lp-card-arrow">View Journey &rarr;</span>
+            </div>
+          </div>
+        `).join('');
+
+        // Attach click handlers to level cards
+        container.querySelectorAll('.lp-level-card').forEach(lc => {
+          lc.addEventListener('click', () => showDetail(lc.dataset.level));
+        });
+
+        showView('view-levels');
+      });
+    });
+
+    // Step 2 → Step 3
+    function showDetail(levelId) {
+      const exam = courseData[currentExam];
+      const level = exam.levels.find(l => l.id === levelId);
+      if (!level) return;
+
+      document.getElementById('back-to-levels-text').textContent = exam.title;
+
+      const waMsg = encodeURIComponent('Hi PledgeCA, I am interested in ' + level.name + ' mentorship.');
+      document.getElementById('detail-container').innerHTML = `
+        <div class="lp-detail-header">
+          <span class="lp-detail-icon">${level.icon}</span>
+          <h3>${level.name}</h3>
+          <span>${level.sub}</span>
+        </div>
+        <div class="lp-detail-body">
+          <p>${level.desc}</p>
+          <div class="lp-journey-title">Your Preparation Journey</div>
+          <div class="lp-journey-steps">
+            ${level.steps.map((s, i) => `
+              <div class="lp-step">
+                <div class="lp-step-num">${i + 1}</div>
+                <div class="lp-step-text"><strong>${s[0]}</strong> – ${s[1]}</div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="lp-features-title">What's Included</div>
+          <ul class="lp-card-features">
+            ${level.features.map(f => `<li>${f}</li>`).join('')}
+          </ul>
+          <div class="lp-card-cta">
+            <a href="https://wa.me/919764015003?text=${waMsg}" class="btn btn-wa" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.506 3.934 1.395 5.608L.05 23.708l6.262-1.34A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.875 0-3.675-.506-5.25-1.462l-.375-.225-3.9.834.85-3.787-.247-.394A9.693 9.693 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg>
+              Chat on WhatsApp
+            </a>
+            <a href="contact.html" class="btn btn-gold">Book Free Counseling</a>
+            <a href="tel:+919764015003" class="btn btn-navy">Call +91 97640 15003</a>
+          </div>
+        </div>
+      `;
+      showView('view-detail');
+    }
+
+    // Back buttons
+    document.getElementById('back-to-exams').addEventListener('click', () => showView('view-exams'));
+    document.getElementById('back-to-levels').addEventListener('click', () => showView('view-levels'));
+  </script>
+</body>
+</html>

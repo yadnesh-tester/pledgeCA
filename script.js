@@ -113,6 +113,43 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(el => counterObserver.observe(el));
 
+// ===== Testimonial Read More =====
+function setupTestiReadMore() {
+  document.querySelectorAll('.testi-card').forEach(card => {
+    if (card.dataset.readmoreInit) return;
+    card.dataset.readmoreInit = 'true';
+
+    const quote = card.querySelector('blockquote');
+    if (!quote) return;
+
+    // Insert read more button after blockquote if not already present
+    if (!card.querySelector('.testi-read-more')) {
+      const btn = document.createElement('button');
+      btn.className = 'testi-read-more';
+      btn.innerHTML = '<span>Read more</span>';
+      quote.insertAdjacentElement('afterend', btn);
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        card.classList.toggle('expanded');
+      });
+    }
+  });
+
+  // Detect clamping after layout settles
+  setTimeout(() => {
+    document.querySelectorAll('.testi-card').forEach(card => {
+      const quote = card.querySelector('blockquote');
+      if (!quote) return;
+      card.classList.remove('clamped');
+      if (quote.scrollHeight > quote.clientHeight + 2) {
+        card.classList.add('clamped');
+      }
+    });
+  }, 300);
+}
+setupTestiReadMore();
+
 // ===== Infinite Testimonials Carousel =====
 (function() {
   const track = document.getElementById('testiTrack');
@@ -239,6 +276,7 @@ counters.forEach(el => counterObserver.observe(el));
   // Initialize
   setupClones();
   goTo(0, false);
+  setupTestiReadMore();
 
   // Recalculate on resize
   let resizeTimer;
