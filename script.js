@@ -113,6 +113,158 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(el => counterObserver.observe(el));
 
+// ===== Infinite Testimonials Carousel =====
+(function() {
+  const track = document.getElementById('testiTrack');
+  if (!track) return;
+
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  const cards = Array.from(track.children);
+  const totalCards = cards.length;
+
+  function getPerView() {
+    return window.innerWidth <= 768 ? 1 : 3;
+  }
+
+  let perView = getPerView();
+  let currentIndex = 0;
+  let isTransitioning = false;
+
+  // Clone cards for infinite loop: clone last `perView` to front, first `perView` to end
+  function setupClones() {
+    // Remove existing clones
+    track.querySelectorAll('.clone').forEach(c => c.remove());
+
+    perView = getPerView();
+    const frontClones = [];
+    const backClones = [];
+
+    for (let i = 0; i < perView; i++) {
+      const backClone = cards[i].cloneNode(true);
+      backClone.classList.add('clone');
+      backClones.push(backClone);
+    }
+    for (let i = totalCards - perView; i < totalCards; i++) {
+      const frontClone = cards[i].cloneNode(true);
+      frontClone.classList.add('clone');
+      frontClones.push(frontClone);
+    }
+
+    frontClones.forEach(c => track.insertBefore(c, track.firstChild));
+    backClones.forEach(c => track.appendChild(c));
+  }
+
+  function getCardWidth() {
+    const allCards = track.querySelectorAll('.testi-card');
+    if (allCards.length === 0) return 0;
+    const style = getComputedStyle(allCards[0]);
+    return allCards[0].offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+  }
+
+  function goTo(index, animate) {
+    if (animate === undefined) animate = true;
+    const cardWidth = getCardWidth();
+    const offset = (index + perView) * cardWidth;
+
+    if (!animate) {
+      track.classList.add('no-transition');
+    } else {
+      track.classList.remove('no-transition');
+    }
+
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    currentIndex = index;
+
+    if (!animate) {
+      // Force reflow
+      track.offsetHeight;
+      track.classList.remove('no-transition');
+    }
+  }
+
+  function next() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex += perView;
+    goTo(currentIndex, true);
+  }
+
+  function prev() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex -= perView;
+    goTo(currentIndex, true);
+  }
+
+  // After transition ends, check if we need to jump to the real position
+  track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+
+    if (currentIndex >= totalCards) {
+      goTo(currentIndex - totalCards, false);
+    } else if (currentIndex < 0) {
+      goTo(currentIndex + totalCards, false);
+    }
+  });
+
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+
+  // Touch/swipe support
+  let startX = 0;
+  let deltaX = 0;
+  let isSwiping = false;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isSwiping = true;
+  }, { passive: true });
+
+  track.addEventListener('touchmove', (e) => {
+    if (!isSwiping) return;
+    deltaX = e.touches[0].clientX - startX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    if (!isSwiping) return;
+    isSwiping = false;
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX < 0) next();
+      else prev();
+    }
+    deltaX = 0;
+  });
+
+  // Initialize
+  setupClones();
+  goTo(0, false);
+
+  // Recalculate on resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const newPerView = getPerView();
+      if (newPerView !== perView) {
+        setupClones();
+        currentIndex = 0;
+      }
+      goTo(currentIndex, false);
+    }, 250);
+  });
+
+  // Auto-play (optional: every 5 seconds)
+  let autoPlay = setInterval(next, 5000);
+
+  // Pause on hover
+  const wrapper = document.querySelector('.carousel-wrapper');
+  if (wrapper) {
+    wrapper.addEventListener('mouseenter', () => clearInterval(autoPlay));
+    wrapper.addEventListener('mouseleave', () => { autoPlay = setInterval(next, 5000); });
+  }
+})();
+
 // ===== Contact form with validation =====
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
