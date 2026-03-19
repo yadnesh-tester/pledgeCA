@@ -342,6 +342,21 @@ if (contactForm) {
 
     if (!isValid) return;
 
+    // Send contact form data to Google Sheet
+    if (typeof GOOGLE_SHEET_URL !== 'undefined' && !GOOGLE_SHEET_URL.startsWith('YOUR_')) {
+      fetch(GOOGLE_SHEET_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: firstName.value.trim() + ' ' + lastName.value.trim(),
+          phone: phone.value.trim(),
+          email: email.value.trim(),
+          message: message.value.trim(),
+          source: 'Contact Form'
+        })
+      }).catch(() => {});
+    }
+
     const btn = contactForm.querySelector('button[type="submit"]');
     const original = btn.textContent;
     btn.textContent = 'Message Sent!';

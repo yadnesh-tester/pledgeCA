@@ -174,7 +174,7 @@
             <span class="lp-exam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M14 2H6C5.4 2 5 2.4 5 3V21C5 21.6 5.4 22 6 22H18C18.6 22 19 21.6 19 21V7L14 2Z"/><path d="M14 2V7H19"/><path d="M9 13H15M9 17H13"/></svg></span>
             <div>
               <h3>CS – Company Secretary</h3>
-              <p>Executive & Professional level support for ICSI exams with expert guidance.</p>
+              <p>Foundation, Executive & Professional level support for ICSI exams with expert guidance.</p>
               <span class="lp-card-arrow">Explore Levels &rarr;</span>
             </div>
           </div>
@@ -275,11 +275,15 @@
       cs: {
         title: 'CS – Company Secretary',
         levels: [
-          { id: 'cs-executive', name: 'CS Executive', sub: 'Foundation Level', popular: false,
-            desc: 'Build your Company Secretary foundation with structured mentorship covering legal frameworks, governance, and compliance.',
+          { id: 'cs-foundation', name: 'CS Foundation', sub: 'Entry Level', popular: false, tsPage: 'cs-foundation.html',
+            desc: 'Start your Company Secretary journey with a strong foundation. Our mentors guide you through all subjects with a proven study plan aligned to ICSI patterns.',
+            steps: [['Free Counseling','Understand your current level, strengths, and gaps'],['Personalized Roadmap','Day-by-day study plan tailored to your timeline'],['Mentor Guidance','Weekly 1-on-1 sessions for doubts and strategy'],['Test Series & Review','Mock tests with detailed evaluation and feedback'],['Exam Ready','Final revision, writing strategies, and confidence building']],
+            features: ['Full-length mock papers','Subject-wise practice tests','Detailed answer solutions','Performance analytics','Timed exam simulation'] },
+          { id: 'cs-executive', name: 'CS Executive', sub: 'Mid Level', popular: true, tsPage: 'cs-executive.html',
+            desc: 'Build your Company Secretary expertise with structured mentorship covering legal frameworks, governance, and compliance.',
             steps: [['Free Counseling','Understand your goals and create a timeline'],['Personalized Roadmap','Subject-wise study plan with daily targets'],['Mentor Guidance','Regular 1-on-1 sessions for concept clarity'],['Test Series & Review','Mock tests aligned with ICSI patterns'],['Exam Ready','Writing strategies and final revision support']],
-            features: ['Full-length mock papers','Subject-wise practice tests','Detailed answer solutions','Performance analytics'] },
-          { id: 'cs-professional', name: 'CS Professional', sub: 'Advanced Level', popular: true,
+            features: ['Full-length mock papers','Subject-wise practice tests','Detailed answer solutions','Performance analytics','Exam strategy guidance'] },
+          { id: 'cs-professional', name: 'CS Professional', sub: 'Advanced Level', popular: false, tsPage: 'cs-professional.html',
             desc: 'Master advanced legal, governance, and compliance subjects with expert mentorship tailored for ICSI Professional exams.',
             steps: [['Free Counseling','Assess preparation and identify priorities'],['Strategic Roadmap','Priority-based plan for high-yield topics'],['Expert Mentorship','Advanced subject guidance and doubt solving'],['Mock Exams & Review','Full papers with mentor evaluation'],['Score Maximization','Writing strategies and exam-day preparation']],
             features: ['Complete mock exam papers','Advanced answer structuring','One-on-one mentor review','Performance tracking','Scoring strategy sessions'] }
@@ -288,15 +292,15 @@
       cma: {
         title: 'CMA – Cost & Management',
         levels: [
-          { id: 'cma-foundation', name: 'CMA Foundation', sub: 'Entry Level', popular: false,
+          { id: 'cma-foundation', name: 'CMA Foundation', sub: 'Entry Level', popular: false, tsPage: 'cma-foundation.html',
             desc: 'Start your Cost & Management Accountant journey with structured guidance covering fundamentals of accounting and management.',
             steps: [['Free Counseling','Understand your goals and create a timeline'],['Personalized Roadmap','Subject-wise study plan with milestones'],['Mentor Guidance','Regular 1-on-1 sessions for concept clarity'],['Test Series & Review','Practice tests aligned with ICMAI patterns'],['Exam Ready','Revision strategies and exam preparation']],
             features: ['Full-length mock papers','Subject-wise practice tests','Detailed answer solutions','Performance analytics'] },
-          { id: 'cma-intermediate', name: 'CMA Intermediate', sub: 'Mid Level', popular: true,
+          { id: 'cma-intermediate', name: 'CMA Intermediate', sub: 'Mid Level', popular: true, tsPage: 'cma-intermediate.html',
             desc: 'Deep dive into costing, management accounting, and financial management with expert mentorship for ICMAI Intermediate exams.',
             steps: [['Free Counseling','Assess preparation level and set priorities'],['Custom Study Plan','Group-wise roadmap with targeted coverage'],['1-on-1 Mentorship','Regular doubt solving and concept building'],['Test Series & Evaluation','Mock tests with detailed mentor feedback'],['Exam Strategies','Writing techniques and time management']],
             features: ['Group-wise mock tests','Chapter-wise practice papers','Mentor review of answers','Performance tracking','Exam strategy guidance'] },
-          { id: 'cma-final', name: 'CMA Final', sub: 'Advanced Level', popular: false,
+          { id: 'cma-final', name: 'CMA Final', sub: 'Advanced Level', popular: false, tsPage: 'cma-final.html',
             desc: 'The final step to becoming a Cost & Management Accountant. Strategic mentorship for advanced subjects with scoring focus.',
             steps: [['Free Counseling','Review past attempts, pinpoint gaps'],['Strategic Roadmap','High-yield topic focus with daily targets'],['Expert Mentorship','Advanced guidance and doubt resolution'],['Mock Exams & Review','Full papers with scoring analysis'],['Score Maximization','Presentation and exam-day strategies']],
             features: ['Complete mock exam papers','Advanced answer structuring','One-on-one mentor review','Performance tracking','Scoring strategy sessions'] }

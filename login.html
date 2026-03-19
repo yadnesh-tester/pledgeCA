@@ -270,6 +270,9 @@
 
   <script src="script.js"></script>
   <script>
+    // ===== Google Sheet Integration =====
+    const GOOGLE_SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+
     // ===== Auth Logic =====
     const tabs = document.querySelectorAll('.auth-tab');
     const loginForm = document.getElementById('login-form');
@@ -332,6 +335,15 @@
       // Save user
       users[email] = { name, phone, email, password, date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) };
       localStorage.setItem('pledgeca_users', JSON.stringify(users));
+
+      // Send signup data to Google Sheet
+      if (GOOGLE_SHEET_URL && !GOOGLE_SHEET_URL.startsWith('YOUR_')) {
+        fetch(GOOGLE_SHEET_URL, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, phone, email, source: 'Signup' })
+        }).catch(() => {});
+      }
 
       showMsg('Account created successfully! Please login.', 'success');
       signupForm.reset();
