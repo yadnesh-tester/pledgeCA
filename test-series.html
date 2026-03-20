@@ -7,9 +7,9 @@
   <meta name="description" content="Choose your exam path with PledgeCA. Expert mentorship, structured study plans, and test series for CA Foundation, Intermediate & Final, CS, and CMA exams. 30-50% questions match actual exams.">
   <meta name="keywords" content="CA courses, CA Foundation course, CA Intermediate course, CA Final course, CS course, CMA course, CA exam preparation, CA mentorship program, CA coaching India">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://pledgeca.com/courses.html">
+  <link rel="canonical" href="https://pledgeca.com/test-series.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pledgeca.com/courses.html">
+  <meta property="og:url" content="https://pledgeca.com/test-series.html">
   <meta property="og:title" content="Choose Your CA, CS or CMA Exam Path | PledgeCA">
   <meta property="og:description" content="Expert mentorship for CA Foundation, Intermediate & Final. 1000+ students mentored. 30-50% exam match rate.">
   <meta property="og:image" content="https://pledgeca.com/images/logo.png">
@@ -124,7 +124,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pledgeca.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Courses", "item": "https://pledgeca.com/courses.html"}
+    {"@type": "ListItem", "position": 2, "name": "Courses", "item": "https://pledgeca.com/test-series.html"}
   ]
 }
 </script>
@@ -206,7 +206,7 @@
           <h2>Not Sure Which Course to Pick?</h2>
           <p>Book a free 30-minute counseling session and our experts will guide you to the right path.</p>
           <div class="cta-actions">
-            <a href="contact.html" class="btn btn-gold btn-lg">Book Free Counseling</a>
+            <a href="contact-us.html" class="btn btn-gold btn-lg">Book Free Counseling</a>
             <a href="tel:+919764015003" class="btn btn-ghost-white btn-lg">Call +91 97640 15003</a>
           </div>
         </div>
@@ -322,14 +322,14 @@
         level.features.map(f => '<li>' + f + '</li>').join('') +
         '</ul><div class="lp-card-cta">' +
         '<a href="https://wa.me/919764015003?text=' + waMsg + '" class="btn btn-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.506 3.934 1.395 5.608L.05 23.708l6.262-1.34A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.875 0-3.675-.506-5.25-1.462l-.375-.225-3.9.834.85-3.787-.247-.394A9.693 9.693 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg> Chat on WhatsApp</a>' +
-        '<a href="contact.html" class="btn btn-navy">Book Free Counseling</a></div></div>';
+        '<a href="contact-us.html" class="btn btn-navy">Book Free Counseling</a></div></div>';
       showView('view-detail');
     }
 
     document.getElementById('back-to-exams').addEventListener('click', () => showView('view-exams'));
     document.getElementById('back-to-levels').addEventListener('click', () => showView('view-levels'));
 
-    // Auto-select exam from URL hash (e.g. courses.html#ca)
+    // Auto-select exam from URL hash (e.g. test-series.html#ca)
     (function() {
       var hash = window.location.hash.replace('#', '');
       if (hash && courseData[hash]) {

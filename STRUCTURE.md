@@ -10,10 +10,10 @@ PledgeCA is a static website for CA, CS, and CMA exam preparation services. It f
 ```
 pledgeCA/
 |-- index.html              # Homepage (hero, services, testimonials, FAQ)
-|-- about.html              # About Us page
+|-- about-us.html              # About Us page
 |-- services.html           # Services overview (mentoring + test series)
-|-- courses.html            # Course selector (CA/CS/CMA > levels)
-|-- contact.html            # Contact form with Google Sheet integration
+|-- test-series.html            # Course selector (CA/CS/CMA > levels)
+|-- contact-us.html            # Contact form with Google Sheet integration
 |-- login.html              # Student signup/login with dashboard
 |
 |-- foundation.html         # CA Foundation - mocks & plans
@@ -80,11 +80,11 @@ Injected into every page via `<footer id="site-footer"></footer>` placeholder.
 
 ```
 Homepage (index.html)
-  |-- Trust Bar: CA/CS/CMA buttons --> courses.html#ca / #cs / #cma
-  |-- "Explore Services" --> courses.html
-  |-- "Book Free Counseling" --> contact.html
+  |-- Trust Bar: CA/CS/CMA buttons --> test-series.html#ca / #cs / #cma
+  |-- "Explore Services" --> test-series.html
+  |-- "Book Free Counseling" --> contact-us.html
   |
-  |-- courses.html (Step 1: Pick exam)
+  |-- test-series.html (Step 1: Pick exam)
   |     |-- CA --> Step 2: Foundation / Intermediate / Final
   |     |     |-- Each level --> Dedicated test series page
   |     |          |-- foundation.html (2 plans: Moderate, Advance)
@@ -104,14 +104,14 @@ Homepage (index.html)
 
 | Service | Purpose | Configuration |
 |---------|---------|---------------|
-| Google Sheets (Apps Script) | Receives signup + contact form data | URL in login.html and contact.html |
+| Google Sheets (Apps Script) | Receives signup + contact form data | URL in login.html and contact-us.html |
 | Google Fonts | Inter + Plus Jakarta Sans typefaces | Loaded via CSS link in each HTML head |
 | WhatsApp API (wa.me) | Floating chat button on all pages | Configured in footer.js |
 | Unsplash | Hero section image on homepage | Direct image URL in index.html |
 
 ### Google Sheet Integration
 - **Signup form** (login.html): Sends name, phone, email, source="Signup"
-- **Contact form** (contact.html + script.js): Sends name, phone, email, message, source="Contact Form"
+- **Contact form** (contact-us.html + script.js): Sends name, phone, email, message, source="Contact Form"
 - Both use `fetch()` with `mode: 'no-cors'`
 - Sheet columns: Timestamp | Name | Phone | Email | Message | Source
 
@@ -126,7 +126,7 @@ Homepage (index.html)
 | Open Graph tags | All 17 pages |
 | Twitter Cards | All 17 pages |
 | BreadcrumbList schema | All 17 pages |
-| Course schema (JSON-LD) | All 9 test series pages + courses.html |
+| Course schema (JSON-LD) | All 9 test series pages + test-series.html |
 | FAQPage schema | Homepage |
 | EducationalOrganization schema | Homepage |
 | AboutPage schema | About page |

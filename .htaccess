@@ -29,6 +29,14 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# === 301 REDIRECTS (Preserve SEO ranking from old URLs) ===
+RewriteRule ^courses\.html$ /test-series.html [R=301,L]
+RewriteRule ^courses$ /test-series.html [R=301,L]
+RewriteRule ^contact\.html$ /contact-us.html [R=301,L]
+RewriteRule ^contact$ /contact-us.html [R=301,L]
+RewriteRule ^about\.html$ /about-us.html [R=301,L]
+RewriteRule ^about$ /about-us.html [R=301,L]
+
 # === REMOVE .html EXTENSION (CLEAN URLS) ===
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
